@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch-me</title>
+    <style>
+        @import url(style.css);
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Catch-me</h1>
+            <div class="controls">
+                <input type="text" class="search-box" placeholder="搜索资源..." id="search-input">
+                <select class="filter-select" id="size-filter">
+                    <option value="all">全部大小</option>
+                    <option value="tiny">小于10KB</option>
+                    <option value="small">10-100KB</option>
+                    <option value="medium">100KB-1MB</option>
+                    <option value="large">大于1MB</option>
+                </select>
+                <button class="refresh-btn" id="refresh-btn">清空</button>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="resource-type">
+                    <h3>资源类型</h3>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-all" checked>
+                        <label for="type-all">全部类型</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-image" checked>
+                        <label for="type-image">图片</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-script" checked>
+                        <label for="type-script">JavaScript</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-stylesheet" checked>
+                        <label for="type-stylesheet">CSS</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-font" checked>
+                        <label for="type-font">字体</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-media" checked>
+                        <label for="type-media">媒体</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-xhr" checked>
+                        <label for="type-xhr">XHR/Fetch</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-document" checked>
+                        <label for="type-document">文档</label>
+                    </div>
+                </div>
+                
+                <div class="resource-type">
+                    <h3>排序方式</h3>
+                    <div class="filter-option">
+                        <input type="radio" id="sort-default" name="sort" checked>
+                        <label for="sort-default">默认顺序</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="sort-size" name="sort">
+                        <label for="sort-size">按大小</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="sort-time" name="sort">
+                        <label for="sort-time">按加载时间</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="sort-name" name="sort">
+                        <label for="sort-name">按名称</label>
+                    </div>
+                </div>
+                <div class="resource-type">
+                    <h3>排序方向</h3>
+                    <div class="filter-option">
+                        <input type="radio" id="sort-asc" name="sort-method" checked>
+                        <label for="sort-asc">升序排序</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="sort-desc" name="sort-method">
+                        <label for="sort-desc">降序排序</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="stats">
+                    <div>找到 <strong id="resources-count">0</strong> 个资源</div>
+                    <div>总大小: <strong id="total-size">0 KB</strong></div>
+                </div>
+                
+                <div class="resource-list" id="resource-list">
+                    <!-- 资源列表将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            Catch-me v1.0 &copy; 2025 TCS
+        </footer>
+    </div>
+    
+    <div class="toast" id="toast">URL已复制到剪贴板</div>
+
+    <script type="text/javascript" src="function.js"></script>
+</body>
+</html>
