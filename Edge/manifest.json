@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Catch-me",
+  "version": "1.0",
+  "description": "用于嗅探和查看网页加载资源的浏览器扩展",
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "icons": {
+    "16":  "icons/16.png",
+    "32":  "icons/32.png",
+    "48":  "icons/48.png",
+    "128": "icons/128.png"
+  },
+
+  "action": {
+    "default_popup": "main.html",
+    "default_title": "Catch-me",
+    "default_icon": {
+      "16":  "icons/16.png",
+      "32":  "icons/32.png",
+      "48":  "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "offline_enabled": true,
+
+  "minimum_chrome_version": "88"
+}
